@@ -1,26 +1,39 @@
 {
-  "name": "callvita-task-server",
-  "version": "1.0.0",
-  "description": "A Node server for a task management web app to be delivered for Callvita",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/PaulAshraf/callvita-task-server.git"
-  },
-  "keywords": [
-    "Node",
-    "express",
-    "API",
-    "task",
-    "managment"
-  ],
-  "author": "Paul Ashraf",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/PaulAshraf/callvita-task-server/issues"
-  },
-  "homepage": "https://github.com/PaulAshraf/callvita-task-server#readme"
+	"name": "callvita-task-server",
+	"version": "1.0.0",
+	"description": "A Node server for a task management web app to be delivered for Callvita",
+	"type": "module",
+	"main": "app.js",
+	"scripts": {
+		"dev": "nodemon app.js",
+		"start": "node app.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/PaulAshraf/callvita-task-server.git"
+	},
+	"keywords": [
+		"Node",
+		"express",
+		"API",
+		"task",
+		"managment"
+	],
+	"author": "Paul Ashraf",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/PaulAshraf/callvita-task-server/issues"
+	},
+	"homepage": "https://github.com/PaulAshraf/callvita-task-server#readme",
+	"dependencies": {
+		"body-parser": "^1.19.0",
+		"express": "^4.17.1",
+		"fs": "0.0.1-security",
+		"marked": "^1.2.2"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.6",
+		"prettier": "2.1.2"
+	}
 }
