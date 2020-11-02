@@ -45,8 +45,15 @@ const edit = (id, newTask) => {
 
 const remove = (id) => {
 	data.find((task, index) => {
+		console.log(
+			`comparing ${task.id} and ${id} so the if condition is ${
+				task.id === id
+			}`
+		)
 		if (task.id === id) {
-			array.splice(index, 1)
+			console.log(data)
+			data.splice(index, 1)
+			console.log(data)
 			return true
 		}
 	})

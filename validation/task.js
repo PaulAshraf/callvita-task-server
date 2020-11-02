@@ -1,9 +1,9 @@
-import { object, string, number } from 'joi'
+import joi from 'joi'
 
-const schema = object({
-	id: number().required(),
-	title: string().required(),
-	description: string().required(),
+const newSchema = joi.object({
+	id: joi.number().required(),
+	title: joi.string().required(),
+	description: joi.string().required(),
 })
 
 export default schema
