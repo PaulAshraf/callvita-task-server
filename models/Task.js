@@ -26,6 +26,10 @@ const updateTask = (oldTask, newTask) => {
 	return task
 }
 
+const get = () => {
+	return data
+}
+
 const add = (task) => {
 	data.push(task)
 }
@@ -48,4 +52,4 @@ const remove = (id) => {
 	})
 }
 
-export { add, edit, remove }
+export { get, add, edit, remove }
