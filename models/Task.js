@@ -47,3 +47,5 @@ const remove = (id) => {
 		}
 	})
 }
+
+export { add, edit, remove }

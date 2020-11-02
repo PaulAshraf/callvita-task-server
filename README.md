@@ -17,7 +17,7 @@ Below you will find a roadplan for the task, with each user story and its curren
 | Set Roadplan    | :heavy_check_mark: |
 | Express Server  | :heavy_check_mark: |
 | Fake "model"    | :construction:     |
-| Validation      | :soon:             |
+| Validation      | :construction:     |
 | API Controllers | :soon:             |
 | Deploy on AWS   | :soon:             |
 
