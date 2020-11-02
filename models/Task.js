@@ -1,16 +1,16 @@
 let data = [
 	{
-		id: 1,
+		id: '133aa138-65eb-4dce-b8f7-2d6dbff647a4',
 		title: 'Learn React',
 		description: 'Learn how to use react in building web app',
 	},
 	{
-		id: 2,
+		id: 'fc0590d2-5287-4366-a811-2e5d2324bdeb',
 		title: 'Learn Node',
 		description: 'Learn how to use node in building server',
 	},
 	{
-		id: 3,
+		id: '56cb0bef-1b3a-4138-bf7f-456fc5f1eca6',
 		title: 'Learn Array Manipulation',
 		description: 'Learn how to manipulate arrays in javascript',
 	},
@@ -35,28 +35,23 @@ const add = (task) => {
 }
 
 const edit = (id, newTask) => {
-	data.find((task, index) => {
+	const found = data.find((task, index) => {
 		if (task.id === id) {
 			data[index] = updateTask(data[index], newTask)
 			return true
 		}
 	})
+	if (!found) throw { error: 'Invalid ID' }
 }
 
 const remove = (id) => {
-	data.find((task, index) => {
-		console.log(
-			`comparing ${task.id} and ${id} so the if condition is ${
-				task.id === id
-			}`
-		)
+	const found = data.find((task, index) => {
 		if (task.id === id) {
-			console.log(data)
 			data.splice(index, 1)
-			console.log(data)
 			return true
 		}
 	})
+	if (!found) throw { error: 'Invalid ID' }
 }
 
 export { get, add, edit, remove }

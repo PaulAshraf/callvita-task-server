@@ -8,6 +8,27 @@ A Node server for a task management web app to be delivered for Callvita
 
 `GET /` Displays the content of the README
 
+`GET /api/task` Returns all tasks in the fake "database"
+
+`POST /api/task` Adds a new task to the array with a unique `id`, add the task title and description in the request body
+
+```json
+{
+	"title": "Example Title",
+	"description": "Example Decription"
+}
+```
+
+`PUT /api/task/:id` Updates the task with the specified `id` in the request params, add the task title or description (or both) in the request body
+
+```json
+{
+	"description": "Example Decription Update"
+}
+```
+
+`DELETE /api/task/:id` Deletes the task with the specified `id` in the request params
+
 ---
 
 Below you will find a roadplan for the task, with each user story and its current status. This will be updated with every commit so you can check the progress across the commits.
