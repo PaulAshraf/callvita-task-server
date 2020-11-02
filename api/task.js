@@ -1,6 +1,7 @@
 import express from 'express'
 const { Router } = express
-import schema from '../validation/task.js'
+import { v4 as uuidv4 } from 'uuid'
+import { newSchema, updateSchema } from '../validation/task.js'
 import { get, add, edit, remove } from '../models/Task.js'
 
 const router = Router()
@@ -18,7 +19,9 @@ router.get('/', (_, res) => {
 router.post('/', async (req, res) => {
 	const task = req.body
 	try {
-		const valTask = await schema.validateAsync(task)
+		const valTask = await newSchema.validateAsync(task)
+		const id = uuidv4()
+		valTask.id = id
 		add(valTask)
 		res.status(200).json(valTask)
 	} catch (error) {
@@ -28,10 +31,10 @@ router.post('/', async (req, res) => {
 })
 
 router.put('/:id', async (req, res) => {
+	const id = req.params.id
 	const task = req.body
 	try {
-		const id = parseInt(req.params.id)
-		const valTask = await schema.validateAsync(task)
+		const valTask = await updateSchema.validateAsync(task)
 		edit(id, valTask)
 		res.status(200).json(valTask)
 	} catch (error) {
@@ -41,8 +44,8 @@ router.put('/:id', async (req, res) => {
 })
 
 router.delete('/:id', async (req, res) => {
+	const id = req.params.id
 	try {
-		const id = parseInt(req.params.id)
 		remove(id)
 		res.status(200).json({ message: 'Action Performed Succesfully' })
 	} catch (error) {
