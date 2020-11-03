@@ -6,6 +6,8 @@ import { get, add, edit, remove } from '../models/Task.js'
 
 const router = Router()
 
+//read route
+//returns all tasks in the db
 router.get('/', (_, res) => {
 	try {
 		const tasks = get()
@@ -16,6 +18,9 @@ router.get('/', (_, res) => {
 	}
 })
 
+//create route
+//validates the request body before modifying the db
+//creates a unique id with uuid
 router.post('/', async (req, res) => {
 	const task = req.body
 	try {
@@ -30,6 +35,8 @@ router.post('/', async (req, res) => {
 	}
 })
 
+//update route
+//validates the request body before modifying the db
 router.put('/:id', async (req, res) => {
 	const id = req.params.id
 	const task = req.body
@@ -43,6 +50,7 @@ router.put('/:id', async (req, res) => {
 	}
 })
 
+//delete route
 router.delete('/:id', async (req, res) => {
 	const id = req.params.id
 	try {
