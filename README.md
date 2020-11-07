@@ -2,6 +2,9 @@
 
 A Node server for a task management web app to be delivered for Callvita
 
+API is deployed on AWS using AWS Lamda (+ AWS CloudFormation & AWS API Gateway)
+Check it out [here](https://14i7iomlmc.execute-api.us-east-2.amazonaws.com/prod/)
+
 ---
 
 ## Routes
@@ -40,7 +43,7 @@ Below you will find a roadplan for the task, with each user story and its curren
 | Fake "model"    | :heavy_check_mark: |
 | Validation      | :heavy_check_mark: |
 | API Controllers | :heavy_check_mark: |
-| Deploy on AWS   | :soon:             |
+| Deploy on AWS   | :heavy_check_mark: |
 
 ---
 

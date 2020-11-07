@@ -1,14 +1,14 @@
-import express from 'express'
+const express = require('express')
 const { Router } = express
-import fs from 'fs'
-import marked from 'marked'
-import path from 'path'
+const fs = require('fs')
+const marked = require('marked')
+// const path = require('path')
 
 const router = Router()
 
 // Displays the README file on the home route (/)
 router.get('/', (_, res) => {
-	let readmePath = path.resolve('./README.md')
+	let readmePath = __dirname + '/../README.md'
 	fs.readFile(readmePath, 'utf8', (error, data) => {
 		if (error) {
 			res.status(404).send('Internal Server Error')
@@ -18,4 +18,4 @@ router.get('/', (_, res) => {
 	})
 })
 
-export default router
+module.exports = router

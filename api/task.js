@@ -1,8 +1,8 @@
-import express from 'express'
+const express = require('express')
 const { Router } = express
-import { v4 as uuidv4 } from 'uuid'
-import { newSchema, updateSchema } from '../validation/task.js'
-import { get, add, edit, remove } from '../models/Task.js'
+const { v4 } = require('uuid')
+const { newSchema, updateSchema } = require('../validation/task.js')
+const { get, add, edit, remove } = require('../models/Task.js')
 
 const router = Router()
 
@@ -25,7 +25,7 @@ router.post('/', async (req, res) => {
 	const task = req.body
 	try {
 		const valTask = await newSchema.validateAsync(task)
-		const id = uuidv4()
+		const id = v4()
 		valTask.id = id
 		add(valTask)
 		res.status(200).json(valTask)
@@ -62,4 +62,4 @@ router.delete('/:id', async (req, res) => {
 	}
 })
 
-export default router
+module.exports = router

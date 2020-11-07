@@ -1,4 +1,4 @@
-import joi from 'joi'
+const joi = require('joi')
 
 //makes the title and description fields required
 const newSchema = joi.object({
@@ -13,4 +13,4 @@ const updateSchema = joi.object({
 	description: joi.string(),
 })
 
-export { newSchema, updateSchema }
+module.exports = { newSchema, updateSchema }

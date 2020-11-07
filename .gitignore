@@ -1,2 +1,7 @@
 node_modules
 .prettierrc.json
+
+lambda.js
+*.json
+*.log
+*.yaml

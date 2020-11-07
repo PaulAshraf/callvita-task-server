@@ -63,4 +63,4 @@ const remove = (id) => {
 	if (!found) throw { error: 'Invalid ID' } //.find() return false if it does not find an id
 }
 
-export { get, add, edit, remove }
+module.exports = { get, add, edit, remove }
